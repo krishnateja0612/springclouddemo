@@ -1,0 +1,18 @@
+Kafka commands:
+
+1. zookeeper-server-start -daemon /usr/local/etc/kafka/zookeeper.properties
+2. kafka-server-start /usr/local/etc/kafka/server.properties
+3. kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic // add —from-beginning if you want to get all msgs from producer even before launch of consumer.
+4. kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic
+
+create a topic:
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+To see topics :
+
+kafka-topics —zookeeper 127.0.0.1:2181 —list
+kafka-topics —zookeeper 127.0.0.1:2181 —topic topic_name describe // to describe topic
+
+3 Types: Spring kafka (office notes flip side)
+		Spring cloud Stream kafka
+		Kafka Streams
